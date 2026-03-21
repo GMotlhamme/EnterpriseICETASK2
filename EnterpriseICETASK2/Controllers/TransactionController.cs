@@ -1,4 +1,5 @@
-﻿using EnterpriseICETASK2.Models;
+﻿using EnterpriseICETASK2.Data;
+using EnterpriseICETASK2.Models;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -14,6 +15,13 @@ namespace EnterpriseICETASK2.Controllers
         {
             return View();
         }
+        private readonly EnterpriseIceTask2Db _context;
+        public TransactionController(EnterpriseIceTask2Db context)
+        {
+            _context = context;
+        }
+
+
         [HttpPost]
         public IActionResult Calculate(Transaction dataFromForm)
         {
@@ -36,7 +44,9 @@ namespace EnterpriseICETASK2.Controllers
             dataFromForm.FinalTotal = Math.Round(afterDiscount + dataFromForm.VAT, 2);
 
             dataFromForm.Date = DateTime.Now;
-
+            
+            _context.Add(dataFromForm);
+            _context.SaveChanges();
 
             return View("Index", dataFromForm);
         }
