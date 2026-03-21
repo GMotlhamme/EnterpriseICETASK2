@@ -1,0 +1,17 @@
+﻿@model EnterpriseICETASK2.Models.Transaction
+
+@{
+    
+}
+<body>
+    <h1>Lets make a transaction</h1>
+    <section>
+        <form asp-controller="Transaction" asp-action="Calculate" method="post">
+            <label asp-for="Subtotal">Amount</label>
+            <input asp-for="Subtotal"/> 
+            <button >Submit</button>
+        </form>
+
+        
+        </section>
+</body>

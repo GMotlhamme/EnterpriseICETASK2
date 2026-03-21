@@ -1,0 +1,15 @@
+﻿@model EnterpriseICETASK2.Models.Transaction
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Lets view our latest transactions</h1>
+
+@if (Model != null)
+{
+    <p>Subtotal: @Model.Subtotal</p>
+    <p>Discount: @Model.Discount</p>
+    <p>VAT: @Model.VAT</p>
+    <p>Final Total: @Model.FinalTotal</p>
+}
