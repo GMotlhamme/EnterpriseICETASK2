@@ -29,11 +29,5 @@ Technical Requirements
 •	FinalTotal
 •	Date
 
-Submission Requirements
-Before submitting your project, you must:
-1.	Generate and include the database script
-2.	Ensure your project runs correctly.
-3.	Include all source code and database files.
-
 
 
